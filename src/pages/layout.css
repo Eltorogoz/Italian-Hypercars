@@ -1,0 +1,98 @@
+nav.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(7, 12, 22, 0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.navbar-inner {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 0.9rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ff3b3b;
+  box-shadow: 0 0 0 4px rgba(255,59,59,0.12);
+}
+
+/* HIDDEN ON DESKTOP */
+.menuBtn { 
+  display: none;
+  color: rgba(255,255,255,0.9);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* DISPLAYED HORIZONTALLY ON DESKTOP */
+.nav-links {
+  list-style: none;
+  display: flex; 
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.92);
+}
+
+/* mobile behavior */
+@media (max-width: 768px) {
+  /* 1. Show the hamburger button */
+  .menuBtn {
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 2. Hide the links by default (mobile menu closed) */
+  .nav-links {
+    display: none; 
+    position: absolute;
+    right: 1rem;
+    top: 64px;
+    width: min(240px, calc(100% - 2rem));
+    flex-direction: column; /* Stack vertically */
+    background: rgba(7, 12, 22, 0.92);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 0.5rem;
+  }
+
+  /* 3. Show the links when the 'isOpen' class is applied by React */
+  .nav-links.isOpen {
+    display: flex; 
+  }
+}
