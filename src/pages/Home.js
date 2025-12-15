@@ -5,8 +5,7 @@ import Accordion from "../components/Accordion";
 import Footer from "../components/Footer";
 
 export default function Home() {
-  // Use your existing carousel items.
-  // If you already have these in your current Home.js, keep them and replace the placeholders below.
+
   const carouselItems = [
     {
       id: 1,
